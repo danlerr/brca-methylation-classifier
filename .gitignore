@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+wheels/
+
+# Data: never committed (see data/README.md)
+data/*
+!data/README.md
+
+# Fitted models (large, reproducible with `uv run brca train`)
+models/
+*.joblib
+*.pkl
+
+# Outputs of the smoke-test config
+results/smoke/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/

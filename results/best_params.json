@@ -1,0 +1,200 @@
+{
+  "methylation_aberration__none__svc": {
+    "C": 0.0001
+  },
+  "methylation_aberration__none__xgb": {
+    "subsample": 1.0,
+    "scale_pos_weight": 10,
+    "n_estimators": 300,
+    "min_child_weight": 1,
+    "max_depth": 10,
+    "learning_rate": 0.05,
+    "colsample_bytree": 0.7
+  },
+  "methylation_aberration__none__stacking": {
+    "svc__C": 0.0001,
+    "xgb__subsample": 1.0,
+    "xgb__scale_pos_weight": 10,
+    "xgb__n_estimators": 300,
+    "xgb__min_child_weight": 1,
+    "xgb__max_depth": 10,
+    "xgb__learning_rate": 0.05,
+    "xgb__colsample_bytree": 0.7
+  },
+  "methylation_aberration__smote__svc": {
+    "C": 0.001
+  },
+  "methylation_aberration__smote__xgb": {
+    "subsample": 0.8,
+    "scale_pos_weight": 10,
+    "n_estimators": 200,
+    "min_child_weight": 1,
+    "max_depth": 4,
+    "learning_rate": 0.2,
+    "colsample_bytree": 0.7
+  },
+  "methylation_aberration__smote__stacking": {
+    "svc__C": 0.001,
+    "xgb__subsample": 0.8,
+    "xgb__scale_pos_weight": 10,
+    "xgb__n_estimators": 200,
+    "xgb__min_child_weight": 1,
+    "xgb__max_depth": 4,
+    "xgb__learning_rate": 0.2,
+    "xgb__colsample_bytree": 0.7
+  },
+  "methylation_aberration__adasyn__svc": {
+    "C": 0.001
+  },
+  "methylation_aberration__adasyn__xgb": {
+    "subsample": 0.8,
+    "scale_pos_weight": 10,
+    "n_estimators": 200,
+    "min_child_weight": 1,
+    "max_depth": 4,
+    "learning_rate": 0.2,
+    "colsample_bytree": 0.7
+  },
+  "methylation_aberration__adasyn__stacking": {
+    "svc__C": 0.001,
+    "xgb__subsample": 0.8,
+    "xgb__scale_pos_weight": 10,
+    "xgb__n_estimators": 200,
+    "xgb__min_child_weight": 1,
+    "xgb__max_depth": 4,
+    "xgb__learning_rate": 0.2,
+    "xgb__colsample_bytree": 0.7
+  },
+  "methylation__none__svc": {
+    "C": 10
+  },
+  "methylation__none__xgb": {
+    "subsample": 1.0,
+    "scale_pos_weight": 10,
+    "n_estimators": 300,
+    "min_child_weight": 1,
+    "max_depth": 10,
+    "learning_rate": 0.05,
+    "colsample_bytree": 0.7
+  },
+  "methylation__none__stacking": {
+    "svc__C": 10,
+    "xgb__subsample": 1.0,
+    "xgb__scale_pos_weight": 10,
+    "xgb__n_estimators": 300,
+    "xgb__min_child_weight": 1,
+    "xgb__max_depth": 10,
+    "xgb__learning_rate": 0.05,
+    "xgb__colsample_bytree": 0.7
+  },
+  "methylation__smote__svc": {
+    "C": 10
+  },
+  "methylation__smote__xgb": {
+    "subsample": 0.8,
+    "scale_pos_weight": 25,
+    "n_estimators": 300,
+    "min_child_weight": 3,
+    "max_depth": 10,
+    "learning_rate": 0.2,
+    "colsample_bytree": 0.7
+  },
+  "methylation__smote__stacking": {
+    "svc__C": 10,
+    "xgb__subsample": 0.8,
+    "xgb__scale_pos_weight": 25,
+    "xgb__n_estimators": 300,
+    "xgb__min_child_weight": 3,
+    "xgb__max_depth": 10,
+    "xgb__learning_rate": 0.2,
+    "xgb__colsample_bytree": 0.7
+  },
+  "methylation__adasyn__svc": {
+    "C": 10
+  },
+  "methylation__adasyn__xgb": {
+    "subsample": 1.0,
+    "scale_pos_weight": 10,
+    "n_estimators": 300,
+    "min_child_weight": 1,
+    "max_depth": 10,
+    "learning_rate": 0.05,
+    "colsample_bytree": 0.7
+  },
+  "methylation__adasyn__stacking": {
+    "svc__C": 10,
+    "xgb__subsample": 1.0,
+    "xgb__scale_pos_weight": 10,
+    "xgb__n_estimators": 300,
+    "xgb__min_child_weight": 1,
+    "xgb__max_depth": 10,
+    "xgb__learning_rate": 0.05,
+    "xgb__colsample_bytree": 0.7
+  },
+  "aberration__none__svc": {
+    "C": 0.0001
+  },
+  "aberration__none__xgb": {
+    "subsample": 1.0,
+    "scale_pos_weight": 10,
+    "n_estimators": 300,
+    "min_child_weight": 1,
+    "max_depth": 10,
+    "learning_rate": 0.05,
+    "colsample_bytree": 0.7
+  },
+  "aberration__none__stacking": {
+    "svc__C": 0.0001,
+    "xgb__subsample": 1.0,
+    "xgb__scale_pos_weight": 10,
+    "xgb__n_estimators": 300,
+    "xgb__min_child_weight": 1,
+    "xgb__max_depth": 10,
+    "xgb__learning_rate": 0.05,
+    "xgb__colsample_bytree": 0.7
+  },
+  "aberration__smote__svc": {
+    "C": 0.0001
+  },
+  "aberration__smote__xgb": {
+    "subsample": 0.8,
+    "scale_pos_weight": 25,
+    "n_estimators": 300,
+    "min_child_weight": 3,
+    "max_depth": 10,
+    "learning_rate": 0.2,
+    "colsample_bytree": 0.7
+  },
+  "aberration__smote__stacking": {
+    "svc__C": 0.0001,
+    "xgb__subsample": 0.8,
+    "xgb__scale_pos_weight": 25,
+    "xgb__n_estimators": 300,
+    "xgb__min_child_weight": 3,
+    "xgb__max_depth": 10,
+    "xgb__learning_rate": 0.2,
+    "xgb__colsample_bytree": 0.7
+  },
+  "aberration__adasyn__svc": {
+    "C": 0.0001
+  },
+  "aberration__adasyn__xgb": {
+    "subsample": 0.8,
+    "scale_pos_weight": 25,
+    "n_estimators": 300,
+    "min_child_weight": 3,
+    "max_depth": 10,
+    "learning_rate": 0.2,
+    "colsample_bytree": 0.7
+  },
+  "aberration__adasyn__stacking": {
+    "svc__C": 0.0001,
+    "xgb__subsample": 0.8,
+    "xgb__scale_pos_weight": 25,
+    "xgb__n_estimators": 300,
+    "xgb__min_child_weight": 3,
+    "xgb__max_depth": 10,
+    "xgb__learning_rate": 0.2,
+    "xgb__colsample_bytree": 0.7
+  }
+}

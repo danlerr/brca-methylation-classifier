@@ -1,0 +1,89 @@
+# Default experiment configuration.
+# All paths are relative to the repository root.
+
+seed: 42
+n_jobs: -1
+
+output:
+  results_dir: results            # metrics, figures, SHAP summaries (committed)
+  models_dir: models              # fitted models (git-ignored)
+
+data:
+  raw_path: data/raw/total_df.csv
+  id_column: ID_paziente
+  target_column: acronyms_y
+  positive_label: brca            # BRCA -> 1, every other tumour type -> 0
+  drop_columns: [extended_y, extended_x, acronyms_x]
+  test_size: 0.2
+
+cv:
+  n_splits: 5
+  shuffle: false                  # same folds as the original thesis code
+
+# Where oversampling happens:
+#   inside_cv  -> sampler is a pipeline step, applied only to training folds (correct)
+#   before_cv  -> training set is oversampled once, then cross-validated (thesis behaviour,
+#                 leaks synthetic samples into validation folds; kept for reproducibility)
+resampling: inside_cv
+
+# Grid of experiments: every combination is trained and evaluated.
+experiments:
+  feature_sets: [methylation_aberration, methylation, aberration]
+  samplers: [none, smote, adasyn]
+  models: [stacking]              # base models used by stacking are reported too
+
+# The final model is chosen by this cross-validated metric (never by the test set).
+selection_metric: balanced_accuracy
+
+models:
+  svc:
+    scoring: recall               # high-recall base learner
+    n_iter: 5
+    param_distributions:
+      C: [0.0001, 0.001, 0.01, 0.1, 1, 10]
+    fixed:
+      class_weight: balanced
+      max_iter: 30000
+
+  xgb:
+    scoring: precision            # high-precision base learner
+    n_iter: 10
+    param_distributions:
+      n_estimators: [100, 200, 300]
+      max_depth: [4, 6, 10]
+      learning_rate: [0.05, 0.1, 0.2]
+      min_child_weight: [1, 3, 5]
+      scale_pos_weight: [10, 20, 25]
+      subsample: [0.8, 1.0]
+      colsample_bytree: [0.7, 0.8, 1.0]
+    fixed: {}
+
+  rf:
+    scoring: balanced_accuracy
+    n_iter: 30
+    param_distributions:
+      n_estimators: [100, 200, 300, 400]
+      max_depth: [null, 10, 20, 30, 40]
+      min_samples_split: [2, 5, 10]
+      min_samples_leaf: [1, 2, 4]
+      max_features: [sqrt, log2]
+    fixed:
+      class_weight: balanced
+
+  stacking:
+    base_models: [svc, xgb]
+    passthrough: true
+    meta_model:                   # XGBoost meta-learner
+      n_estimators: 100
+      max_depth: 5
+      learning_rate: 0.1
+      scale_pos_weight: 3
+      random_state: 99
+
+evaluation:
+  bootstrap_iterations: 1000      # for 95% confidence intervals on the test set
+
+shap:
+  background_size: 100            # rows of the training set used as SHAP background
+  explain_size: 300               # test-set rows to explain (null = whole test set)
+  top_n: 20

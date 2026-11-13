@@ -1,0 +1,7 @@
+{
+  "experiment_id": "methylation_aberration__adasyn__stacking",
+  "selection_metric": "cv_balanced_accuracy_mean",
+  "cv_score": 0.9822366145059845,
+  "test_balanced_accuracy": 0.9554365760531034,
+  "config_resampling": "before_cv"
+}

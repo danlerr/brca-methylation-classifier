@@ -1,0 +1,17 @@
+# Reproduces the configuration reported in the thesis (ADASYN + stacking on
+# methylation + aberration, oversampling applied BEFORE cross-validation).
+# Used only to verify that the refactored code matches the original results.
+# Usage: uv run brca train --config configs/thesis.yaml
+
+extends: default.yaml
+
+resampling: before_cv
+
+experiments:
+  feature_sets: [methylation_aberration]
+  samplers: [adasyn]
+  models: [stacking]
+
+output:
+  results_dir: results/thesis_reproduction
+  models_dir: models/thesis_reproduction

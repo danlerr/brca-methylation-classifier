@@ -1,0 +1,24 @@
+{
+  "methylation_aberration__adasyn__svc": {
+    "C": 0.01
+  },
+  "methylation_aberration__adasyn__xgb": {
+    "subsample": 0.8,
+    "scale_pos_weight": 10,
+    "n_estimators": 200,
+    "min_child_weight": 1,
+    "max_depth": 4,
+    "learning_rate": 0.2,
+    "colsample_bytree": 0.7
+  },
+  "methylation_aberration__adasyn__stacking": {
+    "svc__C": 0.01,
+    "xgb__subsample": 0.8,
+    "xgb__scale_pos_weight": 10,
+    "xgb__n_estimators": 200,
+    "xgb__min_child_weight": 1,
+    "xgb__max_depth": 4,
+    "xgb__learning_rate": 0.2,
+    "xgb__colsample_bytree": 0.7
+  }
+}

@@ -1,0 +1,43 @@
+[project]
+name = "brca-classifier"
+version = "0.1.0"
+description = "Binary classification of breast cancer (BRCA) vs other tumour types from DNA methylation and chromosomal aberration data, with class-imbalance handling and SHAP interpretability."
+readme = "README.md"
+authors = [
+    { name = "Daniele Antonucci" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "imbalanced-learn>=0.14.2",
+    "joblib>=1.6.0",
+    "matplotlib>=3.11.2",
+    "numpy>=2.4.6",
+    "pandas>=3.1.1",
+    "pyyaml>=6.0.3",
+    "scikit-learn>=1.9.1",
+    "shap>=0.51.0",
+    "xgboost>=3.2.0",
+]
+
+[project.scripts]
+brca = "brca_classifier.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.5",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

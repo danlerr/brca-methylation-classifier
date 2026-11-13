@@ -1,0 +1,29 @@
+# Tiny configuration to check that the whole pipeline runs end to end in a few minutes.
+# Usage: uv run brca train --config configs/smoke.yaml
+
+extends: default.yaml
+
+cv:
+  n_splits: 2
+  shuffle: false
+
+experiments:
+  feature_sets: [aberration]
+  samplers: [smote]
+  models: [stacking]
+
+models:
+  svc: {n_iter: 1}
+  xgb: {n_iter: 1}
+
+evaluation:
+  bootstrap_iterations: 50
+
+shap:
+  background_size: 10
+  explain_size: 5
+  top_n: 10
+
+output:
+  results_dir: results/smoke
+  models_dir: models/smoke

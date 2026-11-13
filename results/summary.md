@@ -1,0 +1,29 @@
+| Experiment | CV bal. acc. | Test bal. acc. [95% CI] | Test ROC AUC | Test precision | Test recall |
+|---|---|---|---|---|---|
+| methylation_aberration__adasyn__stacking | 0.909 ± 0.019 | 0.955 [0.933, 0.975] | 0.994 | 0.827 | 0.928 |
+| methylation_aberration__smote__stacking | 0.908 ± 0.016 | 0.941 [0.914, 0.964] | 0.988 | 0.828 | 0.899 |
+| methylation__smote__xgb | 0.902 ± 0.009 | 0.914 [0.882, 0.943] | 0.983 | 0.792 | 0.849 |
+| methylation__smote__svc | 0.902 ± 0.010 | 0.914 [0.886, 0.940] | 0.946 | 0.619 | 0.878 |
+| methylation__adasyn__svc | 0.901 ± 0.007 | 0.916 [0.889, 0.941] | 0.946 | 0.603 | 0.885 |
+| methylation__none__svc | 0.897 ± 0.011 | 0.909 [0.881, 0.934] | 0.946 | 0.547 | 0.885 |
+| methylation__none__stacking | 0.896 ± 0.014 | 0.913 [0.882, 0.942] | 0.993 | 0.899 | 0.835 |
+| methylation_aberration__adasyn__xgb | 0.890 ± 0.014 | 0.928 [0.900, 0.956] | 0.989 | 0.852 | 0.871 |
+| methylation_aberration__smote__xgb | 0.888 ± 0.011 | 0.927 [0.899, 0.954] | 0.983 | 0.834 | 0.871 |
+| methylation__smote__stacking | 0.885 ± 0.008 | 0.908 [0.876, 0.938] | 0.983 | 0.942 | 0.820 |
+| methylation_aberration__none__stacking | 0.881 ± 0.017 | 0.933 [0.905, 0.959] | 0.992 | 0.871 | 0.878 |
+| methylation__adasyn__stacking | 0.875 ± 0.008 | 0.869 [0.832, 0.905] | 0.987 | 0.945 | 0.741 |
+| methylation__adasyn__xgb | 0.873 ± 0.008 | 0.895 [0.862, 0.927] | 0.979 | 0.830 | 0.806 |
+| methylation_aberration__adasyn__svc | 0.861 ± 0.018 | 0.900 [0.870, 0.927] | 0.938 | 0.556 | 0.863 |
+| methylation_aberration__smote__svc | 0.860 ± 0.015 | 0.897 [0.866, 0.926] | 0.936 | 0.559 | 0.856 |
+| methylation_aberration__none__svc | 0.821 ± 0.018 | 0.847 [0.820, 0.870] | 0.898 | 0.276 | 0.914 |
+| methylation__none__xgb | 0.817 ± 0.013 | 0.873 [0.839, 0.909] | 0.985 | 0.972 | 0.748 |
+| methylation_aberration__none__xgb | 0.802 ± 0.013 | 0.839 [0.802, 0.878] | 0.988 | 0.931 | 0.683 |
+| aberration__none__svc | 0.768 ± 0.022 | 0.799 [0.765, 0.832] | 0.850 | 0.259 | 0.813 |
+| aberration__none__stacking | 0.749 ± 0.017 | 0.794 [0.751, 0.836] | 0.919 | 0.708 | 0.612 |
+| aberration__adasyn__xgb | 0.743 ± 0.019 | 0.776 [0.735, 0.816] | 0.908 | 0.512 | 0.604 |
+| aberration__smote__xgb | 0.739 ± 0.016 | 0.762 [0.720, 0.801] | 0.908 | 0.506 | 0.576 |
+| aberration__adasyn__stacking | 0.737 ± 0.023 | 0.776 [0.734, 0.814] | 0.907 | 0.546 | 0.597 |
+| aberration__smote__stacking | 0.727 ± 0.025 | 0.755 [0.713, 0.798] | 0.912 | 0.625 | 0.540 |
+| aberration__smote__svc | 0.687 ± 0.006 | 0.708 [0.668, 0.745] | 0.794 | 0.177 | 0.727 |
+| aberration__adasyn__svc | 0.683 ± 0.007 | 0.699 [0.660, 0.738] | 0.787 | 0.169 | 0.727 |
+| aberration__none__xgb | 0.670 ± 0.025 | 0.695 [0.655, 0.737] | 0.914 | 0.846 | 0.396 |
