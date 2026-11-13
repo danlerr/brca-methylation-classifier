@@ -42,11 +42,6 @@ combined model. Oversampling helps the stacking ensemble on the combined feature
 (0.881 → 0.909 CV). The full table of all 27 models is in
 [`results/summary.md`](results/summary.md).
 
-<p align="center">
-  <img src="results/figures/roc_curves.png" width="45%">
-  <img src="results/figures/confusion_matrix.png" width="40%">
-</p>
-
 ### Interpretability
 
 SHAP values of the selected model's BRCA probability (permutation explainer, 300 test
